@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beloved Sister Myzzi 💜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Floating particles background */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.6), transparent);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); opacity: 0.3; }
+            33% { transform: translateY(-100px) translateX(50px) scale(1.2); opacity: 0.6; }
+            66% { transform: translateY(-50px) translateX(-50px) scale(0.8); opacity: 0.4; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            z-index: 1000;
+            border-bottom: 2px solid rgba(138, 43, 226, 0.3);
+            animation: slideDown 0.8s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s;
+            letter-spacing: 1px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #8a2be2, #ba55d3);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: #ba55d3;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            background: linear-gradient(135deg, #ffffff, #ba55d3, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            color: #ba55d3;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+
+        .borahae {
+            font-size: 2rem;
+            margin-top: 2rem;
+            color: #ba55d3;
+            animation: fadeInUp 1s ease-out 1.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #ba55d3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            font-size: 1.3rem;
+            color: #ba55d3;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out both;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #ba55d3;
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.4);
+            background: rgba(138, 43, 226, 0.2);
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            color: #ba55d3;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card .bts-reference {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(186, 85, 211, 0.3);
+            font-style: italic;
+            color: #ba55d3;
+            font-size: 0.95rem;
+        }
+
+        .card .song-reference {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            color: rgba(186, 85, 211, 0.8);
+            font-weight: 600;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Heart Animation */
+        .heart-container {
+            display: flex;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #8a2be2, #ba55d3);
+            position: relative;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #8a2be2, #ba55d3);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 50px;
+            top: 0;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: rotate(-45deg) scale(1); }
+            25% { transform: rotate(-45deg) scale(1.1); }
+            50% { transform: rotate(-45deg) scale(1); }
+        }
+
+        /* Quote boxes */
+        .quote-box {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(138, 43, 226, 0.15);
+            border-left: 4px solid #ba55d3;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Final Button */
+        .final-section {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .reveal-btn {
+            padding: 1.5rem 3rem;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, #8a2be2, #ba55d3);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(138, 43, 226, 0.4);
+            letter-spacing: 1px;
+        }
+
+        .reveal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.6);
+        }
+
+        .final-message {
+            display: none;
+            font-size: 3rem;
+            margin-top: 2rem;
+            animation: finalReveal 1s ease-out;
+            background: linear-gradient(135deg, #ffffff, #ba55d3, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        @keyframes finalReveal {
+            0% { opacity: 0; transform: scale(0.5) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(2deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0); }
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero .subtitle { font-size: 1.3rem; }
+            .hero p { font-size: 1.1rem; }
+            section h2 { font-size: 2.5rem; }
+            nav ul { gap: 1.5rem; }
+            nav a { font-size: 1rem; }
+            .quote-box { font-size: 1.2rem; }
+            .final-message { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Myzzi 💜</h1>
+        <p class="subtitle">My Dearest Sister, My Angel</p>
+        <p>In this vast universe, like stars finding their constellation, I found the most precious treasure - you. You are my forever person, my safe place, my home.</p>
+        <p class="borahae">보라해 (Borahae) - I'll love you till the end of time 💜</p>
+        <div class="heart-container">
+            <div class="heart"></div>
+        </div>
+    </section>
+
+    <!-- Specialities Section -->
+    <section id="specialities">
+        <h2>Your Specialities ✨</h2>
+        <p class="section-subtitle">Every piece of you shines like the most precious diamond</p>
+        <div class="content-grid">
+            <div class="card">
+                <h3>💜 Your Radiant Smile</h3>
+                <p>Your smile is like sunshine breaking through clouds. It has the power to light up the darkest days and bring warmth to every soul you meet. When you smile, the whole world feels brighter.</p>
+                <p class="bts-reference">Like finding happiness in the smallest moments - your smile is my greatest treasure</p>
+                <p class="song-reference">— “Butterfly” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>🌟 Your Golden Heart</h3>
+                <p>Your kindness knows no bounds. You give love so freely, care so deeply, and make everyone feel valued. Your compassion makes this world a more beautiful place.</p>
+                <p class="bts-reference">You have the kind of heart that makes miracles happen</p>
+                <p class="song-reference">— “Magic Shop” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>✨ Your Inner Strength</h3>
+                <p>You face every storm with grace and emerge stronger each time. Your resilience is breathtaking, your courage inspiring. You're a warrior with the heart of an angel.</p>
+                <p class="bts-reference">Even when you fall, you rise higher - that's your magic</p>
+                <p class="song-reference">— “Not Today” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>🎵 Your Beautiful Soul</h3>
+                <p>Your love for music, especially BTS, shows the depth of your soul. You connect with emotions, understand feelings, and find beauty in art. Your soul is poetry in motion.</p>
+                <p class="bts-reference">Music lives in your heart, and it shows in everything you do</p>
+                <p class="song-reference">— “Mikrokosmos” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>🌸 Your Gentle Spirit</h3>
+                <p>There's a softness in the way you exist - gentle, calming, peaceful. You make people feel safe, heard, and understood. Your presence is a gift to everyone around you.</p>
+                <p class="bts-reference">In a world of chaos, you are the calm</p>
+                <p class="song-reference">— “Spring Day” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>🦋 Your Free Spirit</h3>
+                <p>You dream boldly, love fearlessly, and live authentically. Your spirit cannot be caged - you're meant to fly, to explore, to be wonderfully, unapologetically you.</p>
+                <p class="bts-reference">Like a butterfly spreading its wings, you're destined to soar</p>
+                <p class="song-reference">— “Butterfly” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>💫 Your Wisdom Beyond Years</h3>
+                <p>The way you understand life, empathize with others, and see the world is remarkable. You possess wisdom that takes others a lifetime to gain.</p>
+                <p class="bts-reference">Your thoughts are deeper than oceans, your insights brighter than stars</p>
+                <p class="song-reference">— “Answer: Love Myself” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>🌈 Your Infectious Joy</h3>
+                <p>When you laugh, when you're excited, when you share your happiness - it spreads like wildfire. Your joy is contagious and makes life worth living.</p>
+                <p class="bts-reference">You taught me that happiness is found in loving what you love</p>
+                <p class="song-reference">— “Mikrokosmos” (BTS)</p>
+            </div>
+        </div>
+    </section>
+    <!-- Quotes / Messages Section -->
+    <section id="quotes">
+        <h2>Messages From My Heart 💌</h2>
+        <p class="section-subtitle">Every word is a note in our symphony</p>
+
+        <div class="quote-box">
+            “Sister, your laughter is the melody that brightens my darkest nights. You are my favorite song in this world.”  
+            <p class="bts-reference">— The harmony that binds hearts together</p>
+            <p class="song-reference">“Dimple” (BTS)</p>
+        </div>
+
+        <div class="quote-box">
+            “Your courage inspires me daily. No storm can shake the foundation of your spirit.”  
+            <p class="bts-reference">— Strength in adversity is beautiful</p>
+            <p class="song-reference">“Not Today” (BTS)</p>
+        </div>
+
+        <div class="quote-box">
+            “You make ordinary moments magical. Every memory with you is a treasure I’ll keep forever.”  
+            <p class="bts-reference">— Celebrating the little things together</p>
+            <p class="song-reference">“Mikrokosmos” (BTS)</p>
+        </div>
+    </section>
+
+<!-- Taehyung BTS Section -->
+<section id="taehyung">
+    <h2>Taehyung’s Inspiration 💜</h2>
+    <p class="section-subtitle">Special BTS V quotes and moments that remind me of you</p>
+    <div class="content-grid">
+        <div class="card">
+            <h3>💜 V’s Heartfelt Words</h3>
+            <p>“Don’t be afraid to be yourself. You are amazing the way you are.” Every time I hear this, I think of how special you are, Myzzi.</p>
+            <p class="bts-reference">— V (BTS)</p>
+            <p class="song-reference">Song: Stigma</p>
+        </div>
+        <div class="card">
+            <h3>🌟 Dream Big</h3>
+            <p>“Even if the world is against you, keep shining your own light.” You inspire me just like V inspires millions.</p>
+            <p class="bts-reference">— V (BTS)</p>
+            <p class="song-reference">Song: Singularity</p>
+        </div>
+        <div class="card">
+            <h3>✨ Cherish Life</h3>
+            <p>“Every moment is precious. Enjoy it and love deeply.” That’s exactly how I feel about having you in my life.</p>
+            <p class="bts-reference">— V (BTS)</p>
+            <p class="song-reference">Song: Winter Bear</p>
+        </div>
+        <div class="card">
+            <h3>🎵 Your Inner Vibes</h3>
+            <p>Taehyung always reminds us that music and love come from the heart. Just like you, his passion radiates everywhere.</p>
+            <p class="bts-reference">— V (BTS)</p>
+            <p class="song-reference">Song: Inner Child</p>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Achievements / Proud Moments Section -->
+    <section id="achievements">
+        <h2>Proud Moments & Achievements 🏆</h2>
+        <p class="section-subtitle">Celebrating you, every step of the way</p>
+
+        <div class="content-grid">
+            <div class="card">
+                <h3>🎓 Academic Excellence</h3>
+                <p>You’ve always pushed yourself to achieve greatness in school and beyond. Your dedication is admirable.</p>
+                <p class="bts-reference">Hard work always pays off, just like you’ve shown</p>
+                <p class="song-reference">“Paradise” (BTS)</p>
+            </div>
+
+            <div class="card">
+                <h3>💪 Personal Growth</h3>
+                <p>Every challenge you face, you conquer with strength, patience, and grace. You inspire everyone around you.</p>
+                <p class="bts-reference">Growth is beautiful, and you exemplify it</p>
+                <p class="song-reference">“Answer: Love Myself” (BTS)</p>
+            </div>
+            <div class="card">
+                <h3>🌟 Spreading Kindness</h3>
+                <p>Every act of kindness you show makes the world a better place. Your heart leaves marks on everyone you meet.</p>
+                <p class="bts-reference">Your love is your legacy</p>
+                <p class="song-reference">“Magic Shop” (BTS)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Section / Reveal Message -->
+    <section id="final" class="final-section">
+        <button class="reveal-btn" onclick="revealMessage()">Reveal My Special Message 💜</button>
+        <div class="final-message" id="finalMessage">Myzzi Ma, you are my universe Raani, my forever my heart My everything Baby. 💜</div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        const totalParticles = 50;
+
+        for(let i = 0; i < totalParticles; i++){
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            const size = Math.random() * 5 + 2;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            particle.style.opacity = Math.random();
+            particlesContainer.appendChild(particle);
+        }
+
+        // Reveal final message
+        function revealMessage() {
+            const msg = document.getElementById('finalMessage');
+            msg.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+
